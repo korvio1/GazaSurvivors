@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     GameObject player;
     public float speed = 4f;
     LevelManager lm;
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,19 @@ public class EnemyController : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("PlayerWeapon"))
+        if (other.gameObject.CompareTag("PlayerWeaponGun"))
+        {
+            health -= 5;
+        }
+        else if (other.gameObject.CompareTag("PlayerWeaponSword"))
+        {
+            health -= 7;
+        }
+        else if (other.gameObject.CompareTag("PlayerWeaponStar"))
+        {
+            health -= 3;
+        }
+        if (health <= 0)
         {
             lm.AddPoints(1);
             Destroy(gameObject);

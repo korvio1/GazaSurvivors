@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Bullet
   - PlayerWeapon
+  - PlayerWeaponSword
+  - PlayerWeaponGun
+  - PlayerWeaponStar
   layers:
   - Default
   - TransparentFX
